@@ -1,3 +1,43 @@
+body,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+    padding-left: 0;
+}
 header {
-  display: flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: gray;
+}
+
+.title {
+    display: flex;
+    color: white;
+    align-items: center;
+}
+
+.list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.list > li {
+    list-style: none;
+    color: white;
+    padding: 10px;
+}
+
+.list > li:hover {
+    background-color: tomato;
+    border-radius: 5px;
+}
+.icons {
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+.icons > li {
+    margin-left: 10px;
 }
