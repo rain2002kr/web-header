@@ -96,8 +96,7 @@ li {
         justify-content: center;
         align-items: center;
         width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 8px 24px;
     }
     .navbar__list > li {
         width: 100%;
