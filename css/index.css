@@ -1,8 +1,8 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
 }
-
 :root {
     /* color */
     --color-black: #3f454d;
@@ -25,99 +25,105 @@ body {
     /* animation */
     --animation-duration: 300ms;
 }
+/* common code and reset */
 
-li {
-    list-style: none;
+ul {
+    padding: 0px;
+    margin: 0px;
 }
-/* navbar 콘테이너 시작 */
 .navbar {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     background-color: var(--color-black);
     color: var(--color-white);
-}
-/* navbar title 시작 */
-.navbar__title {
-    display: flex;
-    font-size: var(--font-size-title);
-}
-.navbar__title > li {
-    padding: var(--base-margin) var(--base-margin);
-}
-.navbar__title .fab {
-    color: var(--color-pink);
+    padding: 8px 20px;
 }
 
-/* navbar 리스트 시작 */
-.navbar__list {
+.navbar__logo {
     display: flex;
+    flex-direction: row;
     font-size: var(--font-size);
-    justify-content: space-between;
+    color: var(--color-white);
+    list-style: none;
+    align-items: center;
+}
+.navbar__logo li {
+    padding: 8px 12px;
 }
 
-.navbar__list a {
-    padding: 10px 20px;
+.navbar__logo i {
+    color: var(--color-pink);
+    font-size: 26px;
+}
+
+.navbar__menu {
+    display: flex;
+    list-style: none;
+    padding: left 0px;
+}
+
+.navbar__menu li {
+    padding: 8px 12px;
     border-radius: 4px;
 }
 
-.navbar__list > li :hover {
+.navbar__menu li:hover {
     background-color: var(--color-pink);
 }
 
-/* navbar 아이콘 시작 */
 .navbar__icons {
     display: flex;
-    justify-content: space-between;
+    list-style: none;
+    padding: left 0px;
+}
+.navbar__icons li {
+    padding: 8px 12px;
+}
+.navbar__toglebutton {
+    display: none;
+    position: absolute;
+    color: var(--color-pink);
+    right: 32px;
+    top: 18px;
 }
 
-.navbar__icons > li {
-    padding-right: 20px;
-}
-@media screen and (min-width: 769px) {
-    /* 데스크탑에서 사용될 스타일을 여기에 작성합니다. */
-}
-
+/* Mobile code */
 @media screen and (max-width: 768px) {
-    /* 모바일에 사용될 스트일 시트를 여기에 작성합니다. */
-    ul {
-        margin: 0;
-        padding: 0;
-    }
     .navbar {
         flex-direction: column;
+        align-items: flex-start;
+        padding-left: 12px;
+        padding-right: 12px;
     }
-    .navbar__title {
-        justify-content: start;
-        width: 100%;
-    }
-    .navbar__list {
+    .navbar__menu {
+        display: none;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        width: 100%;
-        padding-left: 20px;
-        padding-right: 20px;
+        width: 100vw;
+        padding-left: 12px;
+        padding-right: 12px;
     }
-    .navbar__list > li {
-        width: 100%;
+    .navbar__menu li {
+        width: 100vw;
         text-align: center;
     }
-    .navbar__list > li > a {
+    .navbar__menu li a {
         display: block;
-        width: 100%;
-        text-align: center;
     }
+
     .navbar__icons {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        align-items: center;
+        display: none;
         justify-content: center;
-        padding: 5px 5px;
+        width: 100vw;
     }
-    .navbar__icons li {
-        padding: 5px;
-        text-align: center;
+    .navbar__toglebutton {
+        display: block;
+    }
+
+    .navbar__icons.active,
+    .navbar__menu.active {
+        display: flex;
     }
 }
